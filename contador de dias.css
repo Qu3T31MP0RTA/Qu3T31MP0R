@@ -80,3 +80,8 @@ input[type="submit"] {
 .event .action{
     padding: 10px;
 }
+
+.search-container {
+    display: flex;
+    justify-content: center;
+}
