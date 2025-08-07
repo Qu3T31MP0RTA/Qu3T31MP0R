@@ -201,8 +201,8 @@ button {
     #eventsContainer {
         border-radius: 2.5px;
         padding: 5px;
-        width: 250px;
-        margin: 40px auto;
+        width: 333px;
+        margin: 53px auto;
         gap: 2.5px;
     }
 
@@ -211,7 +211,7 @@ button {
     }
 
     .event .days {
-        width: 50px;
+        width: 133px;
     }
 
     .days-number {
@@ -219,12 +219,12 @@ button {
     }
 
     .event .event-name {
-        width: 100px;
+        width: 133px;
         padding: 5px;
     }
 
     .event .event-date {
-        width: 50px;
+        width: 66px;
         padding: 5px;
     }
 
@@ -237,22 +237,22 @@ button {
     }
 
     #clearSearch {
-        height: 17.5px;
-        width: 17.5px;
+        height: 23px;
+        width: 23px;
         border-radius: 2.5px;
     }
 
     #searchInput {
-        width: 15px;
-        height: 18px;
+        width: 20px;
+        height: 24px;
     }
 
     #searchInput:hover {
-        width: 215px;
+        width: 286px;
     }
 
     #searchInput:focus {
-        width: 215px;
+        width: 286px;
     }
 
     #searchInput::placeholder {
