@@ -1,0 +1,261 @@
+/* =====================
+   1. Estilos generales
+   ===================== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: pink;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =============================
+   2. Formulario de creación
+   ============================= */
+.form {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    margin: 25px auto;
+}
+
+.form input {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #1860a8;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* =============================
+   3. Búsqueda de eventos
+   ============================= */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchInput {
+    width: 30px;
+    height: 36px;
+    border: 0.5px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 1s ease-in-out;
+}
+
+#searchInput:hover {
+    text-align: end;
+    width: 430px;
+}
+
+#searchInput:focus {
+    outline: none;
+    text-align: start;
+    width: 430px;
+}
+
+#searchInput:focus::placeholder {
+    color: transparent;
+}
+
+/* ===================================
+   4. Botón para limpiar búsqueda (X)
+   =================================== */
+#clearSearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+#l1,
+#l2 {
+    position: absolute;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+#l1 {
+    opacity: 1;
+}
+
+#l2 {
+    opacity: 0;
+}
+
+#clearSearch:active #l1 {
+    opacity: 0;
+}
+
+#clearSearch:active #l2 {
+    opacity: 1;
+    color: greenyellow;
+}
+
+/* ===============================
+   5. Contenedor de eventos
+   =============================== */
+#eventsContainer {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 500px;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ===============================
+   6. Estilo individual de eventos
+   =============================== */
+.event {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event .days {
+    text-align: center;
+    width: 100px;
+}
+
+.days-number {
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+}
+
+.event .event-name {
+    width: 200px;
+    padding: 10px;
+}
+
+.event .event-date {
+    width: 100px;
+    padding: 10px;
+}
+
+.event .actions {
+    padding: 10px;
+}
+
+/* =====================
+   7. Botones generales
+   ===================== */
+button {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* ==========================
+   8. Inputs en modo edición
+   ========================== */
+.edit-name,
+.edit-date {
+    width: 140px;
+    height: 16px;
+    border: 0.5px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================
+   9. Diseño adaptable (Responsive)
+   ========================== */
+@media (max-width: 900px) {
+    body {
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    #eventsContainer {
+        border-radius: 2.5px;
+        padding: 5px;
+        width: 333px;
+        margin: 53px auto;
+        gap: 2.5px;
+    }
+
+    .event {
+        padding: 5px;
+    }
+
+    .event .days {
+        width: 133px;
+    }
+
+    .days-number {
+        font-size: 15px;
+    }
+
+    .event .event-name {
+        width: 133px;
+        padding: 5px;
+    }
+
+    .event .event-date {
+        width: 66px;
+        padding: 5px;
+    }
+
+    .event .actions {
+        padding: 5px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 12px;
+    }
+
+    #clearSearch {
+        height: 23px;
+        width: 23px;
+        border-radius: 2.5px;
+    }
+
+    #searchInput {
+        width: 20px;
+        height: 24px;
+    }
+
+    #searchInput:hover {
+        width: 286px;
+    }
+
+    #searchInput:focus {
+        width: 286px;
+    }
+
+    #searchInput::placeholder {
+        font-size: 10px;
+    }
+}
