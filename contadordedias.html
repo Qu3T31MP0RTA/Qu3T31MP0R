@@ -22,24 +22,42 @@
     <input class="visually-hidden" type="radio" name="theme" id="purple">
 
     <div id="app">
-        <!-- Botones para tema general -->
-        <div class="theme-buttons">
-            <label for="light" title="Claro"></label>
-            <label for="dark" title="Oscuro"></label>
-            <label for="blue" title="Azul"></label>
-            <label for="green" title="Verde"></label>
-            <label for="purple" title="Púrpura"></label>
-        </div>
+        <div class="mover">
+            <li class="navlink services">
+            <span class="material-symbols-outlined">
+                    settings_night_sight
+                </span>
+                <span class="material-symbols-outlined dropdown-icon">
+                    arrow_drop_down
+                </span>
+            <ul class="drop-drown">
+                <li>
+                    <p>Contenedores</p>
+                    <!-- Botones para tema del contenedor de eventos -->
+                    <div class="theme-buttons">
+                        <label for="light0" title="Claro"></label>
+                        <label for="dark1" title="Oscuro"></label>
+                        <label for="blue2" title="Azul"></label>
+                        <label for="green3" title="Verde"></label>
+                        <label for="purple4" title="Púrpura"></label>
+                    </div>
 
-        <!-- Botones para tema del contenedor de eventos -->
-        <div class="theme-buttons">
-            <label for="light0" title="Claro"></label>
-            <label for="dark1" title="Oscuro"></label>
-            <label for="blue2" title="Azul"></label>
-            <label for="green3" title="Verde"></label>
-            <label for="purple4" title="Púrpura"></label>
-        </div>
+                </li>
+                <li>
+                    <p>Fondo</p>
+                    <!-- Botones para tema general -->
+                    <div class="theme-buttons">
+                        <label for="light" title="Claro"></label>
+                        <label for="dark" title="Oscuro"></label>
+                        <label for="blue" title="Azul"></label>
+                        <label for="green" title="Verde"></label>
+                        <label for="purple" title="Púrpura"></label>
+                    </div>
+                </li>
+            </ul>
+        </li>
 
+        </div>
         <!-- Radios para tema de eventos -->
         <input class="visually-hidden" type="radio" name="themee" id="light0" checked>
         <input class="visually-hidden" type="radio" name="themee" id="dark1">

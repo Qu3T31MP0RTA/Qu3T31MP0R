@@ -174,9 +174,9 @@ button {
 .edit-date {
     width: 140px;
     height: 16px;
-    border: 0.5px solid #ccc;
+    border: 0.3px solid #ccc;
     border-radius: 3px;
-    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5);
+    
 }
 
 /* ==========================
@@ -193,6 +193,8 @@ button {
 }
 
 #app {
+       overflow: scroll;           /* Mantiene desplazamiento */
+    scrollbar-width: none;
     --bg: #ffffff;
     --fg: #111111;
     min-height: 100vh;
@@ -204,6 +206,9 @@ button {
     background: var(--bg);
     color: var(--fg);
     transition: background var(--t) ease, color var(--t) ease;
+}
+#app::-webkit-scrollbar { /* Chrome, Edge, Safari */
+    display: none;
 }
 
 .form {
@@ -223,10 +228,10 @@ button {
 }
 
 /* Cambiar tema */
-#dark:checked ~ #app { --bg: #0f1113; }
-#blue:checked ~ #app { --bg: #002b4f; }
-#green:checked ~ #app { --bg: #063b2d; }
-#purple:checked ~ #app { --bg: #3b0b4b; }
+#dark:checked ~ #app {--mge:white; --bg: #0f1113; }
+#blue:checked ~ #app {--mge:white; --bg: #002b4f; }
+#green:checked ~ #app {--mge:white; --bg: #063b2d; }
+#purple:checked ~ #app {--mge:white; --bg: #3b0b4b; }
 
 /* Botones de color del contenedor */
 #dark1:checked ~ #eventsContainer { --mg: white; --bga: #0f1113; }
@@ -327,4 +332,82 @@ label[for="purple"], label[for="purple4"] { background: purple; transform: rotat
         width: 93px;
         height: 10px;
     }
+}
+.mover{
+    display: flex;
+   transform: translate(150px, 40px);
+    justify-content: center;
+    align-items: center;
+}
+.navlink{
+   color: var(--mge);
+}
+
+.navlink,
+.drop-drown li {
+    list-style: none;
+    height: 100%;
+    padding: 0.5rem 1rem;
+    font-weight: 30px;
+    cursor: pointer;
+
+}
+
+.rs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li,
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.drop-drown {
+    position: absolute;
+    padding: 0.5rem 0;
+    margin: 0.5rem -0.5rem;
+    background: black;
+    color: #0090ff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    font-size: 12px;
+    display: none;
+    z-index: +1;
+}
+
+.navlink:hover {
+    background-color: #0090ff;
+    color: white;
+    border-radius: 0.5rem;
+
+}
+
+.services:hover .drop-drown {
+    display: block;
+
+}
+
+.services a {
+    display: flex;
+}
+
+.services .dropdown-icon {
+    font-size: 20px;
+    position: relative;
+    right: -5px;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out all;
+}
+
+.services:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.drop-drown li:hover {
+    background: #0090ff;
+    color: white;
+   
 }
