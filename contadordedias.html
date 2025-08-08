@@ -14,21 +14,40 @@
 </head>
 
 <body>
-    <!-- <input class="visually-hidden" type="radio" name="theme" id="light" checked>
+    <!-- Radios para tema general -->
+    <input class="visually-hidden" type="radio" name="theme" id="light" checked>
     <input class="visually-hidden" type="radio" name="theme" id="dark">
     <input class="visually-hidden" type="radio" name="theme" id="blue">
     <input class="visually-hidden" type="radio" name="theme" id="green">
-    <input class="visually-hidden" type="radio" name="theme" id="purple"> -->
-    <div id="app">
-        <!-- <div class="theme-buttons" role="tablist" aria-label="Seleccionar tema">
-            <label for="light" title="Claro">🌞 Claro</label>
-            <label for="dark" title="Oscuro">🌙 Oscuro</label>
-            <label for="blue" title="Azul">🔵 Azul</label>
-            <label for="green" title="Verde">🟢 Verde</label>
-            <label for="purple" title="Púrpura">🟣 Púrpura</label>
-        </div> -->
+    <input class="visually-hidden" type="radio" name="theme" id="purple">
 
-        <!-- Formulario para agregar eventos -->
+    <div id="app">
+        <!-- Botones para tema general -->
+        <div class="theme-buttons">
+            <label for="light" title="Claro"></label>
+            <label for="dark" title="Oscuro"></label>
+            <label for="blue" title="Azul"></label>
+            <label for="green" title="Verde"></label>
+            <label for="purple" title="Púrpura"></label>
+        </div>
+
+        <!-- Botones para tema del contenedor de eventos -->
+        <div class="theme-buttons">
+            <label for="light0" title="Claro"></label>
+            <label for="dark1" title="Oscuro"></label>
+            <label for="blue2" title="Azul"></label>
+            <label for="green3" title="Verde"></label>
+            <label for="purple4" title="Púrpura"></label>
+        </div>
+
+        <!-- Radios para tema de eventos -->
+        <input class="visually-hidden" type="radio" name="themee" id="light0" checked>
+        <input class="visually-hidden" type="radio" name="themee" id="dark1">
+        <input class="visually-hidden" type="radio" name="themee" id="blue2">
+        <input class="visually-hidden" type="radio" name="themee" id="green3">
+        <input class="visually-hidden" type="radio" name="themee" id="purple4">
+
+        <!-- Formulario -->
         <div class="form">
             <input type="text" id="eventName" placeholder="Nombre del evento">
             <input type="date" id="eventDate">
@@ -44,7 +63,7 @@
             </button>
         </div>
 
-        <!-- Contenedor donde se muestran los eventos -->
+        <!-- Contenedor de eventos -->
         <div id="eventsContainer"></div>
     </div>
 
