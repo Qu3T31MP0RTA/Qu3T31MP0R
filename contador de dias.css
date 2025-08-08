@@ -1,0 +1,365 @@
+/* =====================
+   1. Estilos generales
+   ===================== */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* 
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* =============================
+   2. Formulario de creación
+   ============================= */
+.form {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    margin: 25px auto;
+}
+
+.form input {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #1860a8;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* =============================
+   3. Búsqueda de eventos
+   ============================= */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchInput {
+    width: 30px;
+    height: 36px;
+    border: 0.5px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 1s ease-in-out;
+}
+
+#searchInput:hover {
+    text-align: end;
+    width: 430px;
+}
+
+#searchInput:focus {
+    outline: none;
+    text-align: start;
+    width: 430px;
+}
+
+#searchInput:focus::placeholder {
+    color: transparent;
+}
+
+/* ===================================
+   4. Botón para limpiar búsqueda (X)
+   =================================== */
+#clearSearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+#l1,
+#l2 {
+    position: absolute;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+#l1 {
+    opacity: 1;
+}
+
+#l2 {
+    opacity: 0;
+}
+
+#clearSearch:active #l1 {
+    opacity: 0;
+}
+
+#clearSearch:active #l2 {
+    opacity: 1;
+    color: greenyellow;
+}
+
+/* ===============================
+   5. Contenedor de eventos
+   =============================== */
+#eventsContainer {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 500px;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ===============================
+   6. Estilo individual de eventos
+   =============================== */
+.event {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event .days {
+    text-align: center;
+    width: 100px;
+}
+
+.days-number {
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+}
+
+.event .event-name {
+    width: 200px;
+    padding: 10px;
+}
+
+.event .event-date {
+    width: 100px;
+    padding: 10px;
+}
+
+.event .actions {
+    padding: 10px;
+}
+
+/* =====================
+   7. Botones generales
+   ===================== */
+button {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* ==========================
+   8. Inputs en modo edición
+   ========================== */
+.edit-name,
+.edit-date {
+    width: 140px;
+    height: 16px;
+    border: 0.5px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================
+   9.Cambio de temas
+   ========================== */
+/* :root {
+    --t: 260ms;
+}
+
+#eventsContainer {
+    color: var(--tg);
+
+}
+
+#app {
+    --bg: #ffffff;
+    --fg: #111111;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    background: var(--bg);
+    color: var(--fg);
+    transition: background var(--t) ease;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    border: 0;
+    padding: 0;
+    margin: -1px;
+}
+
+#dark:checked~#app {
+    --bg: #0f1113;
+    --fg: #e9eef6;
+    --tg: black;
+}
+
+#blue:checked~#app {
+    --bg: #002b4f;
+    --fg: #f4fbff;
+    --tg: black;
+}
+
+#green:checked~#app {
+    --bg: #063b2d;
+    --fg: #dff7e6;
+    --tg: black;
+}
+
+#purple:checked~#app {
+    --bg: #3b0b4b;
+    --fg: #fff1ff;
+    --tg: black;
+}
+
+.theme-buttons {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.theme-buttons label {
+    cursor: pointer;
+    padding: .5rem .9rem;
+    border-radius: 10px;
+    user-select: none;
+    border: 1px solid rgba(0, 0, 0, .08);
+    background: rgba(255, 255, 255, 0.08);
+    transition: transform var(--t), box-shadow var(--t), opacity var(--t);
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+}
+
+#light:checked~#app .theme-buttons label[for="light"],
+#dark:checked~#app .theme-buttons label[for="dark"],
+#blue:checked~#app .theme-buttons label[for="blue"],
+#green:checked~#app .theme-buttons label[for="green"],
+#purple:checked~#app .theme-buttons label[for="purple"] {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .18);
+    opacity: 1;
+} */
+
+
+/* ==========================
+   10. Diseño adaptable (Responsive)
+   ========================== */
+@media (max-width: 900px) {
+    body {
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    #eventsContainer {
+        border-radius: 2.5px;
+        padding: 5px;
+        width: 333px;
+        margin: 53px auto;
+        gap: 2.5px;
+    }
+
+    .event {
+        padding: 5px;
+    }
+
+    .event .days {
+        width: 133px;
+    }
+
+    .event .event-name {
+        width: 133px;
+        padding: 5px;
+    }
+
+    .event .event-date {
+        width: 66px;
+        padding: 5px;
+    }
+
+    .event .actions {
+        padding: 5px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 12px;
+    }
+
+    #clearSearch {
+        height: 23px;
+        width: 23px;
+        border-radius: 2.5px;
+    }
+
+    #searchInput {
+        width: 20px;
+        height: 24px;
+    }
+
+    #searchInput:hover {
+        width: 286px;
+    }
+
+    #searchInput:focus {
+        width: 286px;
+    }
+
+    #searchInput::placeholder {
+        font-size: 10px;
+    }
+
+    .edit-name,
+    .edit-date {
+        font-size: 10px;
+        width: 93px;
+        height: 10px;
+        border: 0.5px solid #ccc;
+        border-radius: 3px;
+        box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+}

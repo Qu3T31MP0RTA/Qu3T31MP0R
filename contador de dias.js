@@ -75,17 +75,17 @@ class EventManager {
         const date = this.eventDate.value;
 
         if (!name || !date) {
-            this.showMessage("Por favor completa todos los campos", "error");
+            alert("Por favor completa todos los campos", "error");
             return;
         }
 
         if (this.dateDiff(date) < 0) {
-            this.showMessage("¿Acaso puedes volver al pasado?", "error");
+            alert("¿Acaso puedes volver al pasado?", "error");
             return;
         }
 
         if (this.events.length >= this.maxEvents) {
-            this.showMessage(`Límite máximo de ${this.maxEvents} eventos alcanzado`, "error");
+            alert(`Límite máximo de ${this.maxEvents} eventos alcanzado`, "error");
             return;
         }
 
@@ -102,9 +102,9 @@ class EventManager {
             this.eventName.value = "";
             this.setDefaultDate(); // Reset to tomorrow
             this.filterEvents(this.searchInput?.value || "");
-            this.showMessage("Evento agregado exitosamente", "success");
+            alert("Evento agregado exitosamente", "success");
         } catch (error) {
-            this.showMessage("Error al guardar el evento", "error");
+            alert("Error al guardar el evento", "error");
             console.error("Error saving event:", error);
         }
     }
@@ -291,12 +291,12 @@ class EventManager {
         const newDate = eventCard.querySelector('.edit-date').value;
 
         if (!newName || !newDate) {
-            this.showMessage("Por favor completa todos los campos", "error");
+            alert("Por favor completa todos los campos", "error");
             return;
         }
 
         if (this.dateDiff(newDate) < 0) {
-            this.showMessage("¿Acaso puedes volver al pasado?", "error");
+            alert("¿Acaso puedes volver al pasado?", "error");
             return;
         }
 
@@ -313,9 +313,9 @@ class EventManager {
             await this.updateEventInDB(updatedEvent);
             this.events[eventIndex] = updatedEvent;
             this.filterEvents(this.searchInput?.value || "");
-            this.showMessage("Evento actualizado exitosamente", "success");
+            alert("Evento actualizado exitosamente", "success");
         } catch (error) {
-            this.showMessage("Error al actualizar el evento", "error");
+            alert("Error al actualizar el evento", "error");
             console.error("Error updating event:", error);
         }
     }
@@ -335,9 +335,9 @@ class EventManager {
             await this.deleteEventFromDB(id);
             this.events = this.events.filter(event => event.id !== id);
             this.filterEvents(this.searchInput?.value || "");
-            this.showMessage("Evento eliminado", "success");
+            alert("Evento eliminado", "success");
         } catch (error) {
-            this.showMessage("Error al eliminar el evento", "error");
+            alert("Error al eliminar el evento", "error");
             console.error("Error deleting event:", error);
         }
     }
