@@ -354,7 +354,7 @@ label[for="purple4"] {
 @media (max-width: 900px) {
     .mover {
         display: flex;
-        transform: translate(100px, 40px) !important;
+        transform: translate(115px, 40px) !important;
         justify-content: center;
         align-items: center;
     }
@@ -527,5 +527,6 @@ li {
 .drop-drown li:hover {
     background: #0090ff;
     color: white;
+
 
 }
