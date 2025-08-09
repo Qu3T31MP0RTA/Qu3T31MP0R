@@ -176,7 +176,7 @@ button {
     height: 16px;
     border: 0.3px solid #ccc;
     border-radius: 3px;
-    
+
 }
 
 /* ==========================
@@ -193,7 +193,8 @@ button {
 }
 
 #app {
-       overflow: scroll;           /* Mantiene desplazamiento */
+    overflow: scroll;
+    /* Mantiene desplazamiento */
     scrollbar-width: none;
     --bg: #ffffff;
     --fg: #111111;
@@ -207,7 +208,9 @@ button {
     color: var(--fg);
     transition: background var(--t) ease, color var(--t) ease;
 }
-#app::-webkit-scrollbar { /* Chrome, Edge, Safari */
+
+#app::-webkit-scrollbar {
+    /* Chrome, Edge, Safari */
     display: none;
 }
 
@@ -228,16 +231,46 @@ button {
 }
 
 /* Cambiar tema */
-#dark:checked ~ #app {--mge:white; --bg: #0f1113; }
-#blue:checked ~ #app {--mge:white; --bg: #002b4f; }
-#green:checked ~ #app {--mge:white; --bg: #063b2d; }
-#purple:checked ~ #app {--mge:white; --bg: #3b0b4b; }
+#dark:checked~#app {
+    --mge: white;
+    --bg: #0f1113;
+}
+
+#blue:checked~#app {
+    --mge: white;
+    --bg: #002b4f;
+}
+
+#green:checked~#app {
+    --mge: white;
+    --bg: #063b2d;
+}
+
+#purple:checked~#app {
+    --mge: white;
+    --bg: #3b0b4b;
+}
 
 /* Botones de color del contenedor */
-#dark1:checked ~ #eventsContainer { --mg: white; --bga: #0f1113; }
-#blue2:checked ~ #eventsContainer { --mg: white; --bga: #002b4f; }
-#green3:checked ~ #eventsContainer { --mg: white; --bga: #063b2d; }
-#purple4:checked ~ #eventsContainer { --mg: white; --bga: #3b0b4b; }
+#dark1:checked~#eventsContainer {
+    --mg: white;
+    --bga: #0f1113;
+}
+
+#blue2:checked~#eventsContainer {
+    --mg: white;
+    --bga: #002b4f;
+}
+
+#green3:checked~#eventsContainer {
+    --mg: white;
+    --bga: #063b2d;
+}
+
+#purple4:checked~#eventsContainer {
+    --mg: white;
+    --bga: #3b0b4b;
+}
 
 /* Contenedor circular para los botones */
 .theme-buttons {
@@ -268,26 +301,50 @@ button {
 }
 
 /* Colores y posiciones */
-label[for="light"], label[for="light0"] { background: whitesmoke; transform: rotate(0deg); }
-label[for="dark"], label[for="dark1"] { background: #333; transform: rotate(72deg); }
-label[for="blue"], label[for="blue2"] { background: royalblue; transform: rotate(144deg); }
-label[for="green"], label[for="green3"] { background: seagreen; transform: rotate(216deg); }
-label[for="purple"], label[for="purple4"] { background: purple; transform: rotate(288deg); }
+label[for="light"],
+label[for="light0"] {
+    background: whitesmoke;
+    transform: rotate(0deg);
+}
+
+label[for="dark"],
+label[for="dark1"] {
+    background: #333;
+    transform: rotate(72deg);
+}
+
+label[for="blue"],
+label[for="blue2"] {
+    background: royalblue;
+    transform: rotate(144deg);
+}
+
+label[for="green"],
+label[for="green3"] {
+    background: seagreen;
+    transform: rotate(216deg);
+}
+
+label[for="purple"],
+label[for="purple4"] {
+    background: purple;
+    transform: rotate(288deg);
+}
 
 /* Resaltar botón activo */
-#light:checked ~ #app .theme-buttons label[for="light"],
-#dark:checked ~ #app .theme-buttons label[for="dark"],
-#blue:checked ~ #app .theme-buttons label[for="blue"],
-#green:checked ~ #app .theme-buttons label[for="green"],
-#purple:checked ~ #app .theme-buttons label[for="purple"] {
+#light:checked~#app .theme-buttons label[for="light"],
+#dark:checked~#app .theme-buttons label[for="dark"],
+#blue:checked~#app .theme-buttons label[for="blue"],
+#green:checked~#app .theme-buttons label[for="green"],
+#purple:checked~#app .theme-buttons label[for="purple"] {
     filter: brightness(1.4);
 }
 
-#light:checked ~ #app .theme-buttons1 label[for="light0"],
-#dark1:checked ~ #app .theme-buttons1 label[for="dark1"],
-#blue2:checked ~ #app .theme-buttons1 label[for="blue2"],
-#green3:checked ~ #app .theme-buttons1 label[for="green3"],
-#purple4:checked ~ #app .theme-buttons1 label[for="purple4"] {
+#light:checked~#app .theme-buttons1 label[for="light0"],
+#dark1:checked~#app .theme-buttons1 label[for="dark1"],
+#blue2:checked~#app .theme-buttons1 label[for="blue2"],
+#green3:checked~#app .theme-buttons1 label[for="green3"],
+#purple4:checked~#app .theme-buttons1 label[for="purple4"] {
     filter: brightness(1.4);
 }
 
@@ -295,6 +352,27 @@ label[for="purple"], label[for="purple4"] { background: purple; transform: rotat
    10. Diseño adaptable
    ========================== */
 @media (max-width: 900px) {
+    .mover {
+        display: flex;
+        transform: translate(100px, 40px) !important;
+        justify-content: center;
+        align-items: center;
+    }
+    .drop-drown {
+     transform: translate(15px, 125px) !important;
+    position: absolute;
+    padding: 0.5rem 0;
+    margin: 0.5rem -0.5rem;
+    width: 90px;
+    background: black;
+    color: #0090ff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    font-size: 12px;
+    display: none;
+    z-index: +1;
+}
+
     body {
         font-size: 12px;
     }
@@ -307,13 +385,31 @@ label[for="purple"], label[for="purple4"] { background: purple; transform: rotat
         gap: 2.5px;
     }
 
-    .event { padding: 5px; }
-    .event .days { width: 133px; }
-    .event .event-name { width: 133px; padding: 5px; }
-    .event .event-date { width: 66px; padding: 5px; }
-    .event .actions { padding: 5px; }
+    .event {
+        padding: 5px;
+    }
 
-    .material-symbols-outlined { font-size: 12px; }
+    .event .days {
+        width: 133px;
+    }
+
+    .event .event-name {
+        width: 133px;
+        padding: 5px;
+    }
+
+    .event .event-date {
+        width: 66px;
+        padding: 5px;
+    }
+
+    .event .actions {
+        padding: 5px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 12px;
+    }
 
     #clearSearch {
         height: 23px;
@@ -321,10 +417,19 @@ label[for="purple"], label[for="purple4"] { background: purple; transform: rotat
         border-radius: 2.5px;
     }
 
-    #searchInput { width: 20px; height: 24px; }
+    #searchInput {
+        width: 20px;
+        height: 24px;
+    }
+
     #searchInput:hover,
-    #searchInput:focus { width: 286px; }
-    #searchInput::placeholder { font-size: 10px; }
+    #searchInput:focus {
+        width: 286px;
+    }
+
+    #searchInput::placeholder {
+        font-size: 10px;
+    }
 
     .edit-name,
     .edit-date {
@@ -332,15 +437,18 @@ label[for="purple"], label[for="purple4"] { background: purple; transform: rotat
         width: 93px;
         height: 10px;
     }
+
 }
-.mover{
+
+.mover {
     display: flex;
-   transform: translate(150px, 40px);
+    transform: translate(150px, 40px);
     justify-content: center;
     align-items: center;
 }
-.navlink{
-   color: var(--mge);
+
+.navlink {
+    color: var(--mge);
 }
 
 .navlink,
@@ -366,9 +474,11 @@ a {
 }
 
 .drop-drown {
+     transform: translate(15px, 130px);
     position: absolute;
     padding: 0.5rem 0;
     margin: 0.5rem -0.5rem;
+    width: 90px;
     background: black;
     color: #0090ff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -376,6 +486,14 @@ a {
     font-size: 12px;
     display: none;
     z-index: +1;
+}
+
+li {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .navlink:hover {
@@ -409,5 +527,5 @@ a {
 .drop-drown li:hover {
     background: #0090ff;
     color: white;
-   
+
 }
